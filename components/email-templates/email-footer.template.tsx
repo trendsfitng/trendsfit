@@ -1,4 +1,4 @@
-import { INSTAGRAM, TWITTER } from '@/utils/constants';
+import { BRAND_NAME, INSTAGRAM, TWITTER } from '@/utils/constants';
 import { Link, Section, Text } from '@react-email/components';
 import { FaInstagram, FaTwitter } from 'react-icons/fa';
 
@@ -18,7 +18,7 @@ export const EmailFooter = () => (
         <Link
           key={label}
           href={route}
-          className="text-[#ef4136] hover:text-[#ef4136]/70 transition-all text-xl"
+          className="text-[#5E503F] hover:text-[#5E503F]/70 transition-all text-xl"
           aria-label={label}
         >
           {icon}
@@ -28,11 +28,10 @@ export const EmailFooter = () => (
 
     <Section className="mt-6 text-xs text-gray-500">
       <Text>
-        &copy; {new Date().getFullYear()} Wisdom House International. All Rights
-        Reserved.
+        &copy; {new Date().getFullYear()} {BRAND_NAME}. All Rights Reserved.
       </Text>
     </Section>
-    <Text className="mt-2 bg-[#ef4136] w-full py-4 text-white">
+    <Text className="mt-2 bg-[#5E503F] w-full py-4 text-white">
       Powered by{' '}
       <Link
         href="https://tonnipaul.com"

@@ -5,17 +5,37 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import SvgIcon from './icon';
-import Logo from './logo';
 import Search from './search';
 import ShowView from './show-view';
 
 import { cn } from '@/lib/classnameMerge';
 import { routes } from '@/lib/routes';
+import Image from 'next/image';
+import { IconName } from '@/types/icon.type';
+import { INSTAGRAM, TWITTER } from '@/utils/constants';
+
+interface SocialLink {
+  route: string;
+  label: string;
+  icon: IconName;
+}
+
+export const socials: SocialLink[] = [
+  // { route: FACEBOOK, label: 'Facebook', icon: 'facebook' },
+  { route: INSTAGRAM, label: 'Instagram', icon: 'instagram' },
+  { route: TWITTER, label: 'X (Twitter)', icon: 'twitter' },
+  // { route: TIKTOK, label: 'TikTok', icon: 'tiktok' },
+];
 
 const navItems = [
   {
     label: 'Home',
     route: routes.home(),
+  },
+  {
+    label: 'Posts',
+    route: routes.posts(),
+    newTab: true,
   },
   {
     label: 'About Us',
@@ -24,11 +44,6 @@ const navItems = [
   {
     label: 'Contact',
     route: routes.contact(),
-  },
-  {
-    label: 'Charity',
-    route: routes.charity(),
-    newTab: true,
   },
 ];
 
@@ -58,9 +73,19 @@ const Header = () => {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 left-0 w-full backdrop-blur-3xl shadow-lg bg-app-foreground z-10 py-6">
+    <header className="sticky top-0 left-0 w-screen shadow-lg bg-white z-10 py-6">
       <nav className="app-padding flex w-full justify-between items-center">
-        <Logo />
+        <Link href={routes.home()}>
+          <div className="relative w-40 h-8">
+            <Image
+              src="/assets/logo.png"
+              alt="tales of style logo"
+              fill
+              sizes="100%"
+              className="object-contain object-left-top"
+            />
+          </div>
+        </Link>
 
         <div className="flex flex-1 items-center justify-end gap-5">
           <ShowView when={isOpen}>
@@ -104,13 +129,30 @@ const Header = () => {
                 </li>
               ))}
             </ul>
+
+            {/* <div className="flex gap-5">
+              {socials.map(({ route, label, icon }) => (
+                <Link
+                  href={route}
+                  key={label}
+                  aria-label={label}
+                  className="hover:text-tertiary transition-colors duration-200"
+                  target="_blank"
+                >
+                  <SvgIcon
+                    name={icon as IconName}
+                    className="w-7 h-7 hover:scale-110 transition-transform"
+                  />
+                </Link>
+              ))}
+            </div> */}
           </div>
         </div>
 
         <div className="flex  items-center gap-3 lg:hidden">
           <Search />
           <button
-            className=" text-primary"
+            className="text-primary"
             aria-label="Open mobile menu"
             onClick={handleIsOpen}
           >

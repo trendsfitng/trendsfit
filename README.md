@@ -1,4 +1,4 @@
-# TRENDS FIT BLOG
+# TALES OF STYLE BLOG
 
 The package manager used in this project is `pnpm`. You need to have `pnpm` installed on your machine to proceed.
 

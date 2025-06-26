@@ -10,22 +10,15 @@
     --radius: 0.5rem;
 
     --background: theme(colors.white);
-    --foreground: theme(colors.app-gray.50);
     --text: theme(colors.black);
   }
 
-  .dark {
-    --background: theme(colors.app-black.DEFAULT);
-    --foreground: theme(colors.app-black.600);
-    --text: theme(colors.app-white.DEFAULT);
-  }
-
   html {
-    @apply scroll-smooth antialiased;
+    @apply scroll-smooth antialiased w-screen bg-app-gray overflow-x-hidden;
   }
 
   body {
-    @apply text-app-text font-normal text-a-14 bg-app-foreground w-screen overflow-x-hidden md:text-a-16 lmd:text-a-18 leading-[1.5];
+    @apply text-app-text font-normal text-a-14 bg-app-foreground md:text-a-16 lmd:text-a-18 leading-[1.6];
   }
 
   h1,

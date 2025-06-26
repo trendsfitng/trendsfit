@@ -5,7 +5,6 @@ import { Category, Post } from '@/sanity.types';
 import { scrollToHeading } from '@/utils/scrollToHeading';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import AdvertList from './advert-list';
 import { type Advert } from './cards/advert-card';
 import BlogPostCard from './cards/blog-post-card';
 import NoBlogPosts from './no-blog-posts';
@@ -21,7 +20,7 @@ interface IBlogPostProps {
   })[];
   postPerPage: number;
   total: number;
-  adverts: Advert[];
+  adverts?: Advert[];
 }
 
 const BlogPostSection = ({
@@ -29,7 +28,7 @@ const BlogPostSection = ({
   posts,
   postPerPage,
   total,
-  adverts,
+  // adverts,
 }: IBlogPostProps) => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -55,6 +54,8 @@ const BlogPostSection = ({
     setSelectedCategory(category ?? 'all');
   }, [category]);
 
+  console.log('Posts:', posts);
+
   return (
     <section
       id="blog-posts"
@@ -78,7 +79,7 @@ const BlogPostSection = ({
               <button
                 key={category._id}
                 className={cn(
-                  'hover:bg-secondary whitespace-nowrap bg-app-background transition-colors',
+                  'hover:bg-secondary whitespace-nowrap bg-white transition-colors',
                   selectedCategory === category.slug &&
                     'bg-primary hover:bg-primary text-white',
                   category === categories[0] && 'sticky left-0'
@@ -92,26 +93,18 @@ const BlogPostSection = ({
         </ShowView>
 
         <ShowView when={!!posts.length} fallback={<NoBlogPosts />}>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-5">
+          <div className="flex flex-wrap gap-5">
             {posts?.map(
-              ({
-                _id,
-                title,
-                excerpt,
-                myPublishedAt,
-                author,
-                mainImage,
-                slug,
-              }) => {
+              ({ _id, title, excerpt, author, mainImage, slug, body }) => {
                 return (
                   <BlogPostCard
                     key={_id}
                     title={title ?? ''}
                     excerpt={excerpt || ''}
-                    publishedAt={myPublishedAt || ''}
                     mainImage={mainImage}
                     author={author || 'Anonymous'}
                     slug={slug}
+                    body={body ?? []}
                   />
                 );
               }
@@ -124,9 +117,9 @@ const BlogPostSection = ({
         </ShowView>
       </div>
 
-      <div className="w-full max-w-[500px] lg:max-w-[300px] mx-auto [&>div]:p-5">
+      {/* <div className="w-full max-w-[500px] lg:max-w-[300px] mx-auto [&>div]:p-5">
         <AdvertList adverts={adverts} />
-      </div>
+      </div> */}
     </section>
   );
 };

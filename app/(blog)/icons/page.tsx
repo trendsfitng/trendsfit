@@ -2,12 +2,11 @@ import { Metadata } from 'next';
 
 import IconsPage from '@/components/icons-page';
 
-import { pageTitle } from '@/utils/pageTitle';
-import { redirect } from 'next/navigation';
 import { routes } from '@/lib/routes';
+import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
-  title: pageTitle('Icons'),
+  title: 'Icons',
 };
 
 const Icons = () => {

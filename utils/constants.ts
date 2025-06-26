@@ -1,11 +1,11 @@
 import Mail from 'nodemailer/lib/mailer';
 
-const BRAND_NAME = 'TrendsFit';
+const BRAND_NAME = 'Tales of style';
 
 const DATE_FORMAT = 'D MMM, YYYY';
 
-const INSTAGRAM = 'https://www.instagram.com/wisdomhint_';
-const TWITTER = 'https://x.com/wisdomhint';
+const INSTAGRAM = 'https://www.instagram.com/';
+const TWITTER = 'https://x.com/';
 const FACEBOOK = '#';
 const TIKTOK = '#';
 
@@ -24,7 +24,7 @@ const devEmail: Mail.Address = {
 };
 
 const fromEmail: Mail.Address = {
-  name: 'no-reply@wisdomhint.com',
+  name: 'no-reply@talesofstyle.com',
   address: process.env.MAIL_USERNAME as string,
 };
 

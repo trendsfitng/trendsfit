@@ -1,6 +1,5 @@
 // app/(blog)/posts/[slug]/page.tsx
 
-import { pageTitle } from '@/utils/pageTitle';
 import dayjs from 'dayjs';
 import { Metadata } from 'next';
 import { PortableTextBlock } from 'next-sanity';
@@ -47,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     authors: post?.author?.name ? [{ name: post?.author?.name }] : [],
-    title: pageTitle(post?.title),
+    title: post?.title,
     description: post?.excerpt,
   };
 }
