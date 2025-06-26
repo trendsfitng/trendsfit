@@ -32,6 +32,10 @@ export default {
           50: '#969695',
         },
 
+        'app-gray': {
+          DEFAULT: '#F4F3EE',
+        },
+
         'app-background': {
           DEFAULT: '#F4F3EE',
         },
@@ -54,6 +58,10 @@ export default {
         },
 
         error: 'red',
+      },
+
+      fontFamily: {
+        'app-font-ii': ['var(--app-font-ii)', 'cursive'],
       },
 
       fontSize: {

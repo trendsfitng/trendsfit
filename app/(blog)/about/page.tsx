@@ -1,11 +1,10 @@
-import { pageTitle } from '@/utils/pageTitle';
+import { BRAND_NAME } from '@/utils/constants';
 import { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: pageTitle('About us'),
-  description: `Welcome to Wisdom House International Blog, your source for insightful discussions,
-            deep wisdom, and transformational content.`,
+  title: 'About us',
+  description: `Style, beauty, travel, and real-life inspo— Trendsfits brings you curated looks, lifestyle tips, and stunning photography, all with a touch of everyday luxury.`,
 };
 
 const AboutUsPage = () => {
@@ -17,8 +16,8 @@ const AboutUsPage = () => {
       <div className="flex justify-center mb-6">
         <div className="relative w-full max-w-[100px] md:max-w-[200px] aspect-video h-10 max-sm:h-[60px]">
           <Image
-            src="/assets/trendsfit.png"
-            alt="TrendsFit logo"
+            src="/assets/logo.png"
+            alt="tales of style logo"
             fill
             sizes="100%"
             className={`object-contain `}
@@ -29,20 +28,16 @@ const AboutUsPage = () => {
         &quot;Investing in lives - Making a difference&quot;
       </p>
       <p className="text-base md:text-lg  text-center mb-10">
-        Welcome to Wisdom House International Blog, your source for insightful
-        discussions, deep wisdom, and transformational content.
+        Welcome to {` ${BRAND_NAME} `} Blog, Style, beauty, travel, and
+        real-life inspo— Trendsfits brings you curated looks, lifestyle tips,
+        and stunning photography, all with a touch of everyday luxury.
       </p>
 
       <div className="mb-8">
         <h2 className="text-xl md:text-2xl font-semibold text-secondary mb-4">
           Our Mission
         </h2>
-        <p className=" text-sm md:text-base">
-          Our mission is to inspire, educate, and empower individuals through
-          profound knowledge and life-changing insights. We strive to be a
-          beacon of wisdom, providing content that enriches lives and fosters
-          growth.
-        </p>
+        <p className=" text-sm md:text-base">Something here</p>
       </div>
 
       <div className="mb-8">
@@ -56,9 +51,7 @@ const AboutUsPage = () => {
         <h2 className="text-xl md:text-2xl font-semibold text-secondary mb-4">
           Our Values
         </h2>
-        <p className=" text-sm md:text-base">
-          Professionalism, Truth, Honesty, Integrity, and Excellence.
-        </p>
+        <p className=" text-sm md:text-base">Something here also</p>
       </div>
     </div>
   );

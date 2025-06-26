@@ -52,7 +52,8 @@ export const postsQuery = /* groq */ `
 {
   "posts": *[_type == "post" && defined(slug.current) && myPublishedAt <= now()] 
     | order(myPublishedAt desc) [$start...$end] {
-    ${postFields}
+    ${postFields},
+    body
   },
   "total": count(*[_type == "post" && defined(slug.current) && myPublishedAt <= now()])
 }

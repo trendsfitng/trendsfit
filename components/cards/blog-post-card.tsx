@@ -1,48 +1,33 @@
 import { routes } from '@/lib/routes';
 import { Category } from '@/sanity.types';
 import { urlFor } from '@/sanity/lib/image';
-import { DATE_FORMAT } from '@/utils/constants';
-import dayjs from 'dayjs';
 import Image from 'next/image';
 import Link from 'next/link';
+import SvgIcon from '../icon';
+import { calculateReadTime } from '@/utils/calculateReadTime';
+import { PortableTextBlock } from 'next-sanity';
 
 export interface BlogPostCardProps {
   title: string;
   excerpt: string;
-  publishedAt: string;
   mainImage: { alt: string };
   author: string;
   slug: string;
   category?: Category;
+  body: PortableTextBlock[];
 }
 
 const BlogPostCard = ({
   title,
   excerpt,
-  publishedAt,
   mainImage,
-  author,
   slug,
+  body,
 }: BlogPostCardProps) => {
+  console.log('Body:', body);
   return (
-    <div className="bg-app-background flex flex-col gap-2 shadow-lg rounded-lg group overflow-hidden p-3 pb-5">
-      <Link
-        href={routes.post(slug)}
-        className="font-bold text-a-18 flex-1 line-clamp-3 group-hover:text-primary"
-      >
-        {title}
-      </Link>
-
-      <p className="flex gap-[1ch] items-center text-a-12 font-light">
-        <span className="font-bold text-">{author}</span>
-        <span>-</span>
-        <span>{dayjs(publishedAt).format(DATE_FORMAT)}</span>
-      </p>
-
-      <Link
-        href={routes.post(slug)}
-        className="relative aspect-video w-full group overflow-hidden"
-      >
+    <div className="relative max-w-[367px] h-full isolate flex flex-col">
+      <div className="relative aspect-[14/16] w-full group overflow-hidden -z-1 shadow-lg p-5 rounded">
         <Image
           src={urlFor(mainImage).url()}
           alt={mainImage.alt}
@@ -50,16 +35,29 @@ const BlogPostCard = ({
           sizes="100%"
           className="object-cover group-hover:scale-125 transition-all ease-linear duration-200"
         />
-      </Link>
+      </div>
 
-      <p className="line-clamp-3">{excerpt}</p>
+      <div className="bg-white p-5 shadow-sm w-[90%] -mt-14 z-1 mx-auto">
+        <p className="font-bold text-a-20 md:text-a-24 flex-1 line-clamp-2 font-app-font-ii first-letter:uppercase">
+          {title}
+        </p>
 
-      <Link
-        href={routes.post(slug)}
-        className="ml-auto mt-1 text-a-14 italic text-primary"
-      >
-        Continue Reading...
-      </Link>
+        <p className="line-clamp-2 text-a-14">{excerpt}</p>
+
+        <div className="flex justify-between text-a-14 gap-2 items-center flex-1">
+          <Link
+            href={routes.post(slug)}
+            className=" italic text-primary flex font-bold gap-2 items-center mt-5"
+          >
+            Read now
+            <span>
+              <SvgIcon name="arrow-right" className="w-5 h-5" />
+            </span>
+          </Link>
+
+          <small className="font-bold self-end">{`${calculateReadTime(body)} mins read`}</small>
+        </div>
+      </div>
     </div>
   );
 };

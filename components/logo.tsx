@@ -9,10 +9,10 @@ const Logo = () => {
       <div className="relative w-40 h-8">
         <Image
           src="/assets/trendsfit.png"
-          alt="trendsfit logo"
+          alt="tales of style logo"
           fill
           sizes="100%"
-          className={`object-contain`}
+          className="object-contain object-left-top"
         />
       </div>
     </Link>
