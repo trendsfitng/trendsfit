@@ -22,6 +22,7 @@ const buttonVariants = cva(
           'bg-white text-secondary hover:bg-white/90 hover:border-secondary ',
         transparent: 'border-none text-black',
         'gray-outline': 'border border-gray-300',
+        white: 'bg-white text-primary hover:bg-white/90',
       },
       size: {
         default: '',
