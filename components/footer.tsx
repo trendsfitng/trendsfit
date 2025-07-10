@@ -36,7 +36,7 @@ const Footer = () => {
             <div className="relative w-40 md:w-48 h-8 md:h-10 ">
               <Image
                 src="/assets/logo-white.png"
-                alt="trendsfit logo"
+                alt="tales of style logo"
                 fill
                 sizes="100%"
                 className="object-contain object-left-top"
@@ -46,9 +46,9 @@ const Footer = () => {
 
           <div className="max-w-80 mt-8">
             <p className="text-a-16">
-              Style, beauty, travel, and real-life inspo— Trendsfits brings you
-              curated looks, lifestyle tips, and stunning photography, all with
-              a touch of everyday luxury.
+              Style, beauty, travel, and real-life inspo— Tales of style brings
+              you curated looks, lifestyle tips, and stunning photography, all
+              with a touch of everyday luxury.
             </p>
           </div>
         </div>
@@ -63,7 +63,7 @@ const Footer = () => {
               <li key={label}>
                 <Link
                   href={href}
-                  className="text-sm text-app-white/80 hover:text-tertiary transition-colors duration-200"
+                  className="text-sm text-app-white/80 hover:text-white transition-colors duration-200"
                 >
                   {label}
                 </Link>
@@ -77,7 +77,7 @@ const Footer = () => {
           <h2 className="text-xl font-semibold text-primary mb-4">
             Stay Updated
           </h2>
-          <p className="text-sm text-app-white/80 mb-4">
+          <p className="text-sm text-app-white/80 font-app-font-ii font-bold text-a-20 md:text-a-24 mb-4">
             Subscribe to our newsletter for the latest news, insights, and
             exclusive offers.
           </p>

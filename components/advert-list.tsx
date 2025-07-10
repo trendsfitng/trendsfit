@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 
 const AdvertList = ({ adverts }: { adverts: Advert[] }) => {
   return (
-    <div className="top-[120px] z-1 sticky rounded-lg overflow-y-auto bg-app-background">
+    <div className="top-[120px] z-1 sticky rounded-lg overflow-y-auto bg-white">
       <ShowView when={!!adverts.length} fallback={<NoAdvertCard />}>
         <h2 className="text-lg font-semibold mb-4 text-app-text text-center">
           Sponsored Adverts

@@ -1,5 +1,3 @@
-// app/(blog)/posts/[slug]/page.tsx
-
 import dayjs from 'dayjs';
 import { Metadata } from 'next';
 import { PortableTextBlock } from 'next-sanity';
@@ -51,8 +49,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const colors = ['bg-primary', 'bg-secondary', 'bg-tertiary', 'bg-purple-700'];
-
 export default async function PostPage({ params }: Props) {
   const [post] = (await Promise.all([
     sanityFetch({ query: singlePostQuery, params }),
@@ -80,13 +76,11 @@ export default async function PostPage({ params }: Props) {
           <div>
             <div className="flex gap-4 my-6 flex-wrap">
               {post.categories.map((category) => {
-                const randomColor =
-                  colors[Math.floor(Math.random() * colors.length)];
                 return (
                   <Link
                     href={`${routes.home()}?category=${category.slug}`}
                     key={category.title}
-                    className={`py-2 px-5 font-semibold w-max text-white ${randomColor} rounded`}
+                    className={`py-2 px-5 font-semibold w-max text-primary odd:text-white border border-primary bg-transparent odd:bg-primary rounded`}
                   >
                     {category.title}
                   </Link>
@@ -139,7 +133,7 @@ export default async function PostPage({ params }: Props) {
               <ShowView
                 when={!!comments.length}
                 fallback={
-                  <div className="text-center py-6 bg-app-background rounded-lg shadow-md">
+                  <div className="text-center py-6 bg-white rounded-lg shadow-md">
                     <p className="text-lg font-semibold">
                       This post has no comments yet.
                     </p>
@@ -151,7 +145,7 @@ export default async function PostPage({ params }: Props) {
                   return (
                     <div
                       key={comment._createdAt}
-                      className="bg-app-background group p-5 mb-4 rounded-lg shadow-md"
+                      className="bg-white group p-5 mb-4 rounded-lg shadow-md"
                     >
                       <div className="flex items-center gap-3 mb-3">
                         <div className="w-10 h-10 group-odd:bg-primary group-even:bg-secondary rounded-full flex items-center justify-center">
