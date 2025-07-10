@@ -42,7 +42,7 @@ export default function NewsletterSignupUser({
             <EmailHeader />
 
             <Section className="my-8 text-center">
-              <Text className="text-3xl font-extrabold text-[#ef4136]">
+              <Text className="text-3xl font-extrabold text-[#5E503F]">
                 🎉 Welcome to {BRAND_NAME}, {name}! 🎉
               </Text>
               <Text className="text-lg text-gray-700 mt-4">

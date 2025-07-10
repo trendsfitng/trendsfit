@@ -82,7 +82,7 @@ const PostCommentForm = ({ postId }: { postId: string }) => {
         hideCloseButton
       >
         {(close) => (
-          <div className="bg-app-foreground p-5 w-full max-w-[700px] mx-auto">
+          <div className="bg-white p-5 w-full max-w-[700px] mx-auto">
             <div className="inline-flex w-full justify-between">
               <p className="text-a-16 md:text-a-20 font-medium mb-10">
                 Add comment
