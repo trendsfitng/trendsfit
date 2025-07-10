@@ -60,14 +60,14 @@ export const Control = (
 ) => (
   <components.Control
     {...props}
-    className={`border bg-app-background text-app-text w-full rounded p-2 px-3 focus:border-red-700 h-max rounded-5 ${props.isDisabled && '!cursor-not-allowed pointer-events-none'} ${props.isFocused && '!shadow-none'}`}
+    className={`border bg-white text-app-text w-full rounded p-2 px-3 focus:border-primary h-max rounded-5 ${props.isDisabled && '!cursor-not-allowed pointer-events-none'} ${props.isFocused && '!shadow-none'}`}
   />
 );
 
 export const Option = (props: OptionProps<AsyncSelectOptionType>) => (
   <components.Option
     {...props}
-    className="relative z-1 text- p-3 !bg-app-background rounded-10 border-b last-of-type:border-b-0 ease-linear transition-colors duration-75 w-full"
+    className="relative z-1 text- p-3 !bg-white rounded-10 border-b last-of-type:border-b-0 ease-linear transition-colors duration-75 w-full"
   >
     <Link
       href={routes.post(props.data.slug ?? '/')}
@@ -106,7 +106,7 @@ export const Menu = (
 ) => (
   <components.Menu
     {...props}
-    className="z-50 overflow-auto border !bg-app-background !shadow-app-shadow rounded-lg mt-2"
+    className="z-50 overflow-auto border !bg-white !shadow-app-shadow rounded-lg mt-2"
   >
     {props.children}
   </components.Menu>
