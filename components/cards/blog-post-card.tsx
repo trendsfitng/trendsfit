@@ -24,7 +24,6 @@ const BlogPostCard = ({
   slug,
   body,
 }: BlogPostCardProps) => {
-  console.log('Body:', body);
   return (
     <div className="relative max-w-[367px] h-full isolate flex flex-col">
       <div className="relative aspect-[14/16] w-full group overflow-hidden -z-1 shadow-lg p-5 rounded">

@@ -43,7 +43,7 @@ export default function NewsletterSignupAdmin({
             <EmailHeader />
 
             <Section className="my-8">
-              <Text className="text-2xl font-extrabold text-center text-[#ef4136]">
+              <Text className="text-2xl font-extrabold text-center text-[#5E503F]">
                 📩 New Newsletter Signup!
               </Text>
               <Text className="text-lg text-gray-700 text-center mt-2">
@@ -53,10 +53,10 @@ export default function NewsletterSignupAdmin({
 
               <div className="border border-gray-200 p-4 mt-6 rounded-lg bg-gray-50">
                 <Text className="text-lg">
-                  <strong className="text-[#02498e]">👤 Name:</strong> {name}
+                  <strong className="text-[#3F4D5E ]">👤 Name:</strong> {name}
                 </Text>
                 <Text className="text-lg">
-                  <strong className="text-[#02498e]">✉️ Email:</strong> {email}
+                  <strong className="text-[#3F4D5E ]">✉️ Email:</strong> {email}
                 </Text>
               </div>
 

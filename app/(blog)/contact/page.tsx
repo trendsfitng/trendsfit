@@ -1,14 +1,16 @@
-import { socials } from '@/components/footer';
+import Link from 'next/link';
+
 import ContactUsForm from '@/components/forms/contact-us-form';
 import SvgIcon from '@/components/icon';
+
+import { socials } from '@/components/footer';
 import { IconName } from '@/types/icon.type';
-import Link from 'next/link';
-import React from 'react';
+import { SUPPORT_EMAIL } from '@/utils/constants';
 
 const contactOptions = [
   {
     label: 'Send us an Email',
-    href: 'mailto:contact@example.com',
+    href: `'mailto:${SUPPORT_EMAIL}`,
     icon: 'envelope',
     description:
       'Get in touch with us via email. We usually respond within 24 hours.',
@@ -46,7 +48,7 @@ const ContactPage = () => {
           <Link
             key={label}
             href={href}
-            className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-app-background rounded-lg shadow-sm transition-transform hover:scale-95"
+            className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-white rounded-lg shadow-sm transition-transform hover:scale-95"
           >
             <SvgIcon name={icon as IconName} className="w-8 h-8 text-primary" />
             <div className="text-center sm:text-left">
@@ -68,7 +70,7 @@ const ContactPage = () => {
               href={route}
               key={label}
               aria-label={label}
-              className="p-3 rounded-full bg-app-background transition-colors"
+              className="p-3 rounded-full bg-white transition-colors"
             >
               <SvgIcon
                 name={icon as IconName}

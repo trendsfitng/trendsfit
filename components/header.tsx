@@ -99,7 +99,7 @@ const Header = () => {
 
           <div
             className={cn(
-              `flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 w-0 overflow-hidden max-w-[500px] bg-app-foreground lg:w-max fixed h-lvh lg:h-auto top-0 left-0 lg:relative max-lg:p-5 lg:p-[auto] lg:translate-x-0 z-20 transition-transform `,
+              `flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 w-0 overflow-hidden max-w-[500px] bg-white lg:w-max fixed h-lvh lg:h-auto top-0 left-0 lg:relative max-lg:p-5 lg:p-[auto] lg:translate-x-0 z-20 transition-transform `,
               isOpen ? 'translate-x-0 w-full' : 'translate-x-[-100%]'
             )}
           >

@@ -26,7 +26,7 @@ export default function ContactEmail({ name, email, message }: IContactForm) {
             <EmailHeader />
 
             <Section className="my-6">
-              <Text className="text-2xl font-bold text-center text-[#ef4136] mb-4">
+              <Text className="text-2xl font-bold text-center text-[#5E503F] mb-4">
                 New Contact Form Submission
               </Text>
               <div className="space-y-4">

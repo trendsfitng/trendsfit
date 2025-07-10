@@ -59,7 +59,7 @@ export default function NewCommentEmail({
             <EmailHeader />
 
             <Section className="my-8">
-              <Text className="text-2xl font-extrabold text-center text-[#ef4136]">
+              <Text className="text-2xl font-extrabold text-center text-[#5E503F]">
                 📝 New Comment on Your Post!
               </Text>
               <Text className="text-lg text-gray-700 text-center mt-2">
@@ -75,7 +75,7 @@ export default function NewCommentEmail({
                 </Text>
                 <Text className="text-lg">
                   <strong className="text-secondary">📌 Post:</strong>{' '}
-                  <Link href={post_url} className="text-[#ef4136] underline">
+                  <Link href={post_url} className="text-[#5E503F] underline">
                     {post_title}
                   </Link>
                 </Text>

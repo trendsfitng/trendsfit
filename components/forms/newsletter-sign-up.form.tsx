@@ -81,7 +81,7 @@ const NewsletterSignUp = () => {
           autoComplete="email"
         />
 
-        <Button className="mt-5 ml-auto" loading={isPending}>
+        <Button variant="white" className="mt-5 ml-auto" loading={isPending}>
           Subscribe
         </Button>
       </form>
