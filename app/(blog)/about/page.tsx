@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const AboutUsPage = async () => {
   const data = await sanityFetch({ query: aboutUsQuery });
 
-  // const content = data?.content ?? [];
+  console.log('DATA', data);
 
   if (!data) {
     return (
@@ -32,9 +32,6 @@ const AboutUsPage = async () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-10 md:px-6 lg:px-8">
-      <h1 className="text-3xl md:text-4xl font-bold text-center text-primary mb-6">
-        About Us
-      </h1>
       <div className="flex justify-center mb-6">
         <div className="relative w-full max-w-[100px] md:max-w-[200px] aspect-video h-10 max-sm:h-[60px]">
           <Image
@@ -47,9 +44,13 @@ const AboutUsPage = async () => {
         </div>
       </div>
 
-      <section className="w-full px-4 py-8 mx-auto">
+      <h1 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+        About Us
+      </h1>
+
+      <section className="w-full ">
         <div className="bg-white p-6 shadow-xl">
-          <PortableText value={data} />
+          <PortableText value={data.content} />
         </div>
       </section>
     </div>
