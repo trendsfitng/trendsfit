@@ -91,7 +91,7 @@ const BlogPostSection = ({
         </ShowView>
 
         <ShowView when={!!posts.length} fallback={<NoBlogPosts />}>
-          <div className="flex flex-wrap gap-5">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5">
             {posts?.map(
               ({ _id, title, excerpt, author, mainImage, slug, body }) => {
                 return (

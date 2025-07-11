@@ -7,7 +7,9 @@ import Link from 'next/link';
 export interface Advert {
   name: string;
   banner: string;
+  description?: string;
   external_link?: string;
+  link_text?: string;
 }
 
 const AdvertCard = ({ name, banner, external_link }: Advert) => {

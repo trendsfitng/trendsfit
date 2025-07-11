@@ -112,13 +112,16 @@ const Hero = ({ posts }: HeroProps) => {
       </ShowView>
 
       <div className="relative ">
-        {posts?.map(({ title, mainImage, excerpt, slug }, i) => (
+        {posts?.slice(0, 1).map(({ title, mainImage, excerpt, slug }, i) => (
           <SwiperSlide key={i}>
-            <section className="section-padding min-h-[80vh] grid align-baseline">
+            <section
+              key={i}
+              className="section-padding min-h-[80vh] grid align-baseline"
+            >
               <div className="absolute top-0 left-0 -z-1 w-full min-h-screen">
                 <Image
                   src={urlFor(mainImage).url()}
-                  alt={mainImage.alt}
+                  alt={mainImage.alt ?? title}
                   sizes="100%"
                   fill
                   className="object-cover brightness-[0.3] bg-primary/80 opacity-95"
@@ -127,7 +130,7 @@ const Hero = ({ posts }: HeroProps) => {
               </div>
 
               <div className="p-10 max-w-[500px] self-end bg-white border border-white/20 shadow-lg ">
-                <p className="text-a-18 lg:text-a-40 first-letter:uppercase line-clamp-1 font-app-font-ii">
+                <p className="text-a-18 lg:text-a-40 first-letter:uppercase tracking-[-1] line-clamp-1 font-app-font-ii">
                   {title}
                 </p>
 

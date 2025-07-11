@@ -35,7 +35,6 @@ const navItems = [
   {
     label: 'Posts',
     route: routes.posts(),
-    newTab: true,
   },
   {
     label: 'About Us',
@@ -122,7 +121,6 @@ const Header = () => {
                       'hover:border-primary border-b',
                       `${isActive(item.route) && 'text-primary font-medium hover:!text-primary'}`
                     )}
-                    target={item.newTab ? '_blank' : ''}
                   >
                     <p>{item.label}</p>
                   </Link>
