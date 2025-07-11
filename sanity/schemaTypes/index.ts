@@ -8,6 +8,7 @@ import { commentType } from './comment.schema';
 import newsletterType from './newsletter.schema';
 import { advertSchema } from './adverts.schema';
 import { youtube } from './youtube.schema';
+import { aboutUs } from './about-us.schema';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -19,5 +20,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     authorType,
     newsletterType,
     youtube,
+    aboutUs,
   ],
 };

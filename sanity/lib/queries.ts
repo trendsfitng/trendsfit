@@ -102,3 +102,7 @@ export const activeAdvertsQuery = /* groq */ `
   description
 }
 `;
+
+export const aboutUsQuery = `*[_type == "about" && _id == "aboutUs"][0]{
+  content
+}`;
