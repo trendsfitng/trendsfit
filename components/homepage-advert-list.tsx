@@ -1,25 +1,24 @@
 'use client';
 
-import { Autoplay, EffectCube, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import AdvertCard, { Advert } from './cards/advert-card';
-import NoAdvertCard from './cards/no-advert-card';
 import ShowView from './show-view';
 
 import 'swiper/css';
 import 'swiper/css/effect-cube';
 import 'swiper/css/pagination';
+import { Advert } from './cards/advert-card';
+import AdvertCard from './home-page-advert-card';
 
-const AdvertList = ({ adverts }: { adverts: Advert[] }) => {
+const HomepageAdvertList = ({ adverts }: { adverts: Advert[] }) => {
   return (
-    <div className="top-[120px] z-1 sticky rounded-lg overflow-y-auto bg-white">
-      <ShowView when={!!adverts.length} fallback={<NoAdvertCard />}>
+    <div className="rounded-lg py-5 overflow-y-auto">
+      <ShowView when={!!adverts.length}>
         <h2 className="text-lg font-semibold mb-4 text-app-text text-center">
           Sponsored Adverts
         </h2>
 
         <Swiper
-          effect="cube"
           grabCursor={true}
           cubeEffect={{
             shadow: false,
@@ -34,7 +33,7 @@ const AdvertList = ({ adverts }: { adverts: Advert[] }) => {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          modules={[EffectCube, Pagination, Autoplay]}
+          modules={[Pagination, Autoplay]}
         >
           {adverts.map((ad, i) => (
             <SwiperSlide key={ad.banner + i} className="">
@@ -42,6 +41,8 @@ const AdvertList = ({ adverts }: { adverts: Advert[] }) => {
                 name={ad.name}
                 banner={ad.banner}
                 external_link={ad.external_link}
+                link_text={ad.link_text}
+                description={ad.description}
               />
             </SwiperSlide>
           ))}
@@ -51,4 +52,4 @@ const AdvertList = ({ adverts }: { adverts: Advert[] }) => {
   );
 };
 
-export default AdvertList;
+export default HomepageAdvertList;

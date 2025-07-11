@@ -94,7 +94,6 @@ export default function CustomPortableText({
       },
 
       video: ({ value }) => {
-        console.log('VALUE VIDEO', value);
         return (
           <video className="relative w-full aspect-video">
             <source src={urlFor(value).url()} type="video/mp4" />

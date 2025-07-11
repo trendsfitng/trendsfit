@@ -54,8 +54,6 @@ const BlogPostSection = ({
     setSelectedCategory(category ?? 'all');
   }, [category]);
 
-  console.log('Posts:', posts);
-
   return (
     <section
       id="blog-posts"
@@ -66,7 +64,7 @@ const BlogPostSection = ({
           <div className="flex rounded flex-wrap [&>button]:py-1 [&>button]:px-5 gap-2  [&>button]:shadow-2xl  mb-10">
             <button
               className={cn(
-                ' hover:bg-secondary  whitespace-nowrap bg-app-background transition-colors',
+                ' hover:bg-secondary  whitespace-nowrap bg-white transition-colors',
                 selectedCategory === 'all' &&
                   'bg-primary hover:bg-primary text-white',
                 'sticky left-0'
@@ -93,7 +91,7 @@ const BlogPostSection = ({
         </ShowView>
 
         <ShowView when={!!posts.length} fallback={<NoBlogPosts />}>
-          <div className="flex flex-wrap gap-5">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5">
             {posts?.map(
               ({ _id, title, excerpt, author, mainImage, slug, body }) => {
                 return (

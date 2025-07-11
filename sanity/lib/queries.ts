@@ -97,6 +97,8 @@ export const activeAdvertsQuery = /* groq */ `
   banner,
   start_date,
   end_date,
-  external_link
+  external_link,
+  link_text,
+  description
 }
 `;

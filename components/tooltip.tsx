@@ -23,7 +23,7 @@ const Tooltip = ({ text, trigger, ...props }: TooltipProps) => {
         <Portal>
           <Content
             {...props}
-            className="z-40 w-full p-2 max-w-[250px] text-center rounded bg-app-foreground border"
+            className="z-40 w-full p-2 max-w-[250px] text-center rounded bg-white border"
           >
             {text}
             <Arrow className="text-primary fill-current" />

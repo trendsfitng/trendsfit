@@ -24,13 +24,12 @@ const BlogPostCard = ({
   slug,
   body,
 }: BlogPostCardProps) => {
-  console.log('Body:', body);
   return (
-    <div className="relative max-w-[367px] h-full isolate flex flex-col">
+    <div className="relative h-full isolate flex flex-col">
       <div className="relative aspect-[14/16] w-full group overflow-hidden -z-1 shadow-lg p-5 rounded">
         <Image
           src={urlFor(mainImage).url()}
-          alt={mainImage.alt}
+          alt={mainImage.alt ?? title}
           fill
           sizes="100%"
           className="object-cover group-hover:scale-125 transition-all ease-linear duration-200"
