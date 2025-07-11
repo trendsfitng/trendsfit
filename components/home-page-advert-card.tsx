@@ -31,7 +31,7 @@ const AdvertCard = ({
   );
 
   const CardContent = (
-    <div className="relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm group">
+    <div className="relative overflow-hidden rounded-xl border border-gray-200 shadow-xl bg-white  group">
       <div className="relative w-full aspect-video max-h-[500px]">
         <Image
           src={imageUrl}
