@@ -1,5 +1,7 @@
 import BlogPostSection from '@/components/blogs-post-section';
+import EmptyAdverts from '@/components/empty-advert';
 import Hero from '@/components/hero';
+import HomepageAdvertList from '@/components/homepage-advert-list';
 
 import { sanityFetch } from '@/sanity/lib/fetch';
 import {
@@ -65,6 +67,12 @@ const Home = async ({ searchParams }: Props) => {
         total={total}
         adverts={activeAdverts}
       />
+
+      <section className="section-padding">
+        <HomepageAdvertList adverts={activeAdverts} />
+
+        <EmptyAdverts />
+      </section>
     </>
   );
 };
